@@ -8,7 +8,6 @@
     <script type="text/javascript">
         function $(id) { return document.getElementById(id); }
         var str = [];
-        var gold = [0, 20, 18, 25, 35, 21.75, 2.67, 100, 40, 14, 37.5, 26, 1.4]
         var result = 0;
 
         function equals()	//等于
@@ -18,25 +17,13 @@
             str[2] = document.getElementById("text2");
             str[3] = document.getElementById("text3");
             str[4] = document.getElementById("text4");
-            str[5] = document.getElementById("text5");
-            str[6] = document.getElementById("text6");
-            str[7] = document.getElementById("text7");
-            str[8] = document.getElementById("text8");
-            str[9] = document.getElementById("text9");
-            str[10] = document.getElementById("text10");
-            str[11] = document.getElementById("text11");
-            str[12] = document.getElementById("text12");
 
-            for (var i = 1; i < 13; i++) {
-                if (str[i] == NaN) {
-                    str[i].value = "0";
-                }
-                var temp;
-                temp = eval(str[i].value);
-                temp = temp * eval(gold[i]);
-                result += temp;
+            result = (eval(str[1].value) - 2) * 2 + eval(str[2].value) * 2
+                + 4 * eval(str[3].value) + eval(str[4].value);
+
+            if (result > 0) { str[0].value = result; } else {
+                str[0].value = "请重新输入"
             }
-            str[0].value = result;
 
 
         }
@@ -47,14 +34,7 @@
             str[2] = document.getElementById("text2");
             str[3] = document.getElementById("text3");
             str[4] = document.getElementById("text4");
-            str[5] = document.getElementById("text5");
-            str[6] = document.getElementById("text6");
-            str[7] = document.getElementById("text7");
-            str[8] = document.getElementById("text8");
-            str[9] = document.getElementById("text9");
-            str[10] = document.getElementById("text10");
-            str[11] = document.getElementById("text11");
-            str[12] = document.getElementById("text12");
+
             for (var i = 0; i < str.length; i++) {
                 str[i].value = '';
             }
@@ -67,7 +47,7 @@
         }
 
         .butt {
-            transform: translate(1050px, 200px);
+            transform: translate(650px, 90px);
         }
 
         .in {
@@ -87,54 +67,53 @@
 <body>
     <div id="calculator" class="caculator">
         <div id="head">
-            <h3>装备面板属性金币价值</h3>
+            <h3>小小英雄损失血量</h3>
         </div><br>
 
         <div id="show" align="center" class="shuru">
             <span class="eql">
                 <input type="text" id="text1" class="in" value=0>
-                <img src="img/hujia.png" class="tubiao">护 甲
+                <img src="img/压缩.png" class="tubiao">阶段(>=3) <br><br>
                 <input type="text" id="text2" class="in" value=0>
-                <img src="img/mokang.png" class="tubiao">魔 抗
-                <br>
+                <img src="img/鸡哥.png" class="tubiao">剩余普通棋子<br><br>
                 <input type="text" id="text3" class="in" value=0>
-                %<img src="img/攻速.png" class="tubiao">攻 速
+                <img src="img/霞.png" class="tubiao">剩余龙神棋子<br><br>
                 <input type="text" id="text4" class="in" value=0>
-                <img src="img/攻击力.png" class="tubiao">攻 击
-                <br>
-                <input type="text" id="text5" class="in" value=0>
-                <img src="img/法强.png" class="tubiao">法 强
-                <input type="text" id="text6" class="in" value=0>
-                <img src="img/生命值.png" class=" tubiao">生命值
-                <br>
-                <input type="text" id="text7" class="in" value=0>
-                <img src="img/jinengjisu.png" class="tubiao">冷 却
-                <input type="text" id="text8" class="in" value=0>
-                %<img src="img/暴击.png" class="tubiao">暴击率
-                <br>
-                <input type="text" id="text9" class="in" value=0>
-                %<img src="img/穿甲.png" class="tubiao">穿甲
-                <input type="text" id="text10" class="in" value=0>
-                %<img src="img/生命偷取.png" class="tubiao">生命偷取
-                <br>
-                <input type="text" id="text11" class="in" value=0>
-                %<img src="img/法穿.png" class="tubiao">法穿
-                <input type="text" id="text12" class="in" value=0>
-                <img src="img/法力值.png" class="tubiao">法力值
-                <br>
+                <img src="img/传送门.png" class="tubiao">剩余召唤物
+
+
             </span>
 
 
 
-            <span class="eql"><br><br><br><br><br><br>
-                &nbsp; &nbsp; &nbsp; &nbsp;=
+            <span class="eql"><br><br><br><br>
+                &nbsp; &nbsp; &nbsp; &nbsp;===》
                 <input type="text" id="output" class="in" readonly="readongly">
-                <span class="eql"> 金币</span></span>
+                <span class="eql"> 损失血量</span></span>
 
         </div>
 
         <div><span><input type="button" value="重置" onclick="reset()" class="butt"></span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span><input type="button" value="转换" onclick="equals()" class="butt"></span>
+        </div>
+
+
+        <div id="box">
+            <div> <span><img src="img/官方.png" class="li"><a href="https://lol.qq.com/tft/#/index " target="_blank"
+                        id="link">云顶官方</a></span>
+                <span><img src="img/云顶公开赛.jpg " class=" li"><a href="https://toc.qq.com/" target="_blank"
+                        id="link">云顶公开赛</a></span>
+            </div>
+            <div>
+                <span><img src="img/godlike.webp" class="li"><a
+                        href="https://space.bilibili.com/388063772?spm_id_from=333.337.0.0" target="_blank"
+                        id="link">公式人，学点手法</a></span>
+
+                <span><img src="img/honglian.webp" class="li"><a
+                        href="https://space.bilibili.com/624967229?spm_id_from=333.337.0.0" target="_blank"
+                        id="link">乐子人，攒点狗运</a></span>
+            </div>
         </div>
 
 

@@ -24,11 +24,11 @@
             if (result < 0) {
                 str2.value = "输入值无效"
             } else {
-                str2.value = (result * 100) / (result + 100);
-                result = str2.value;
-                result = Math.round(result);
+                result = result * 4.5
+                result = Math.round(result)
                 str2.value = result
             }
+
         }
         function reset()	//清除
         {
@@ -40,7 +40,11 @@
     </script>
     <style>
         h3 {
-            color: aqua;
+            color: rgb(228, 77, 77);
+        }
+
+        .eql {
+            color: brown;
         }
     </style>
 </head>
@@ -48,21 +52,23 @@
 <body>
     <div id="calculator" class="caculator">
         <div id="head">
-            <h3>魔抗与魔法伤减百分比转换</h3>
+            <h3>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;打野脏兵指南</h3>
         </div><br>
 
         <div id="show" align="center" class="shuru"><input type="text" id="text" class="in">
-            <img src="img/mokang.png" class="tubiao"><span class="eql">
-                魔抗值</span>
+            <span class="eql">
+                刷野组数</span>
             <span class="eql">
                 =</span>
-            <input type="text" id="output" class="in">
-            <span class="eql"> %魔法伤害减免</span>
+            <input type="text" id="output" class="in" readonly="readongly">
+            <span class="eql"> 你能吃的小兵数</span>
 
         </div>
-        <div id="bu"><span><input type="button" value="重置" onclick="reset()" class="butt"></span>
+        <div><span><input type="button" value="重置" onclick="reset()" class="butt"></span>
             <span><input type="button" value="转换" onclick="equals()" class="butt"></span>
         </div>
+
+
         <div id="box">
             <span><img src="img/gongluezhongxin.png" class="li"><a
                     href="https://101.qq.com/#/hero-rank-5v5?tier=200&queue=420" id="link">官方攻略中心</a></span>
@@ -77,6 +83,8 @@
                     id="link">英雄联盟设计师！！！</a></span>
 
         </div>
+
+
 
 
         <div id="title"><img src="img/logo-public.png" class="top"></div>
